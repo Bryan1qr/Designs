@@ -1,0 +1,28 @@
+---
+title: "Diseño de experimentos"
+author: "Bryan Quispe"
+execute: 
+  warning: false
+  message: false
+lang: es
+format: html
+---
+
+# Estadística y colección de datos
+
+La estadística es definida como la ciencia de colectar, analizar y generar conclusiones a partir de los datos. Los datos son usualmente colectados por medio de muestreos, estudios observacionales o experimentos.
+
+# Modelos lineales
+
+```{r}
+library(daewr)
+mod0 <- lm(data = bread, height ~ time)
+summary(mod0)
+```
+
+```{r}
+library(gmodels)
+fit.contrast(mod0, "time", c(1, -1,0))
+```
+
+## Asunciones del modelo lineal
